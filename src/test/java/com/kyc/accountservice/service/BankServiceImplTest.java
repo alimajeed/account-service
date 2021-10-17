@@ -29,12 +29,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeoutException;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class BankServiceImplTest {
@@ -103,9 +103,7 @@ class BankServiceImplTest {
         when(verificationService.verifyUser(any())).thenReturn(CompletableFuture.completedFuture(true));
         when(fileStorageService.storeFile(any())).thenReturn(CompletableFuture.completedFuture("filepath"));
         when(userRepository.save(any())).thenReturn(user);
-        when(userService.saveUser(any())).thenReturn(user);
         when(accountRepository.save(any())).thenReturn(account);
-        when(accountService.createAccount(user)).thenReturn(account);
         when(verificationService.getFutureResults(any())).thenReturn(true);
 
 

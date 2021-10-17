@@ -14,6 +14,8 @@ Account API with Docker Script.
 - [x] Exception Handling (ControllerAdvice)
 - [x] Request payload validation
 - [x] Docker Container
+- [x] Docker Compose (For Multiple containerized applications)
+- [x] K8 Scripts
 
 ## Package
 mvn clean package
@@ -43,3 +45,26 @@ docker build -t alimjd/account-service-image .
 
 #### Run
 docker run -d -p 8000:8000 <image_id>
+
+#### Docker Compose
+docker compose -f docker-compose.yaml up -d
+
+## Kubernetes
+
+#### Minikube
+minikube start
+
+#### Minikube UI
+minikube dashboard
+
+#### Kubernetes Services And Deployments
+
+###### path : cd K8s
+
+##### Commands
+
+kubectl apply -f account-deployment.yaml
+kubectl apply -f account-service.yaml
+
+#### Run
+minikube service <service-name>
