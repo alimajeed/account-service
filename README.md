@@ -6,7 +6,7 @@ Account API with Docker Script.
 - [x] create user details
 - [x] update user details
 - [x] fetch user details
-- [x] H2 Database (JPA) - Can be extended to database of choice
+- [x] H2 Database (JPA) - This is only for demonstration. It can be extended to database of choice
 - [x] Unit Testing (Junit, Mockito)
 - [x] Consumes/Produces Json By default (spring)
 - [x] Swagger Documentation
