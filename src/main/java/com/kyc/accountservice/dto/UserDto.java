@@ -46,6 +46,7 @@ public class UserDto {
 
     CompanyDto company;
 
+    @Valid
     AccountDto account;
 
     @NotNull(groups = CreateRequest.class)
