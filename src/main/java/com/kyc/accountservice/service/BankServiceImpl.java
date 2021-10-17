@@ -63,11 +63,6 @@ public class BankServiceImpl implements BankService {
         return createdUserDto.getUserId();
     }
 
-    private void deleteFile (String fileName){
-        File deleteFile = new File(fileStorageService.getFileStorageLocation().toAbsolutePath() + "\\" + fileName);
-        deleteFile.delete();
-    }
-
     @Override
     @Transactional
     public boolean updateUserDetails(UserDto userDto) {
